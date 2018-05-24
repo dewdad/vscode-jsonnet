@@ -36,6 +36,7 @@
   },
 
   event:: {
+    OnLanguage(languageId):: "onLanguage:%s" % languageId,
     OnCommand(id):: "onCommand:%s" % id,
   },
 
@@ -82,6 +83,14 @@
       DefaultObjectProperty(property, description, default=null):: {
         [property]: {
           type: "object",
+          default: default,
+          description: description,
+        },
+      },
+
+      DefaultArrayProperty(property, description, default=[]):: {
+        [property]: {
+          type: "array",
           default: default,
           description: description,
         },
